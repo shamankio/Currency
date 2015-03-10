@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Currency</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="currensy_title">Курс валют</string>
+    <string name="currency_id">Currency</string>
+    <string name="buy">Покупка</string>
+    <string name="sale">Продажа</string>
+    <string name="grn">грн.</string>
+    <string name="privatbank">Приватбанк</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">КУРС\nВАЛЮТ</string>
+</resources>

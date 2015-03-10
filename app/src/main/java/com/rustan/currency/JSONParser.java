@@ -8,8 +8,8 @@ import org.apache.http.StatusLine;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,7 +18,7 @@ import java.io.InputStreamReader;
 
 public class JSONParser {
 
-    public static JSONObject getJSONFromUrl(String url) {
+    public static JSONArray getJSONFromUrl(String url) {
         StringBuilder builder = new StringBuilder();
         // Создаем HTTP клиент, который позволит работать с HTTP запросами
         HttpClient client = new DefaultHttpClient();
@@ -49,15 +49,16 @@ public class JSONParser {
             Log.e(JSONParser.class.toString(), "Failed status code = " + statusCode);
         }
 
-        JSONObject jsonObject = null;
+        JSONArray jsonArray = null;
         try {
             // формируем JSON объект
-            jsonObject = new JSONObject(builder.toString());
+            jsonArray = new JSONArray(builder.toString());
+            Log.d("myLog",builder.toString());
         } catch (JSONException e) {
             Log.e(JSONParser.class.getName(), "Not valid JSON data.");
         }
 
         // возвращаем сформированный JSON объект
-        return jsonObject;
+        return jsonArray;
     }
 }
