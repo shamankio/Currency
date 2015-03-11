@@ -37,15 +37,15 @@ public class InitScreen extends Activity {
             if (jsonUAHToUSD != null) {
                 try {
                     JSONObject jobj = jsonUAHToUSD.getJSONObject(2);
-                    Log.d("myLog2", jobj.toString());
-                    Log.d("myLog2", "ccy=" + jobj.getString("ccy"));
+                    Log.d("myLog", "json object[2]="+jobj.toString());
+                    Log.d("myLog", "ccy=" + jobj.getString("ccy"));
                     currency.setCur_buy(jobj.getDouble("buy"));
                     currency.setCur_sale(jobj.getDouble("sale"));
                     currency.setCur_name(jobj.getString("ccy"));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                Log.d("myLog1", jsonUAHToUSD.toString());
+                Log.d("myLog", "JSON Array ="+jsonUAHToUSD.toString());
             }
             return null;
         }

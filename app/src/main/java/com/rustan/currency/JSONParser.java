@@ -59,7 +59,7 @@ public class JSONParser {
         try {
             // формируем JSON объект
             jsonArray = new JSONArray(builder.toString());
-            Log.d("myLog", builder.toString());
+            Log.d("myLog","Response string: "+builder.toString());
         } catch (JSONException e) {
             Log.e(JSONParser.class.getName(), "Not valid JSON data.");
         }
