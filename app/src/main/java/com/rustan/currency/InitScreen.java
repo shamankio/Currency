@@ -13,7 +13,7 @@ import org.json.JSONObject;
 
 public class InitScreen extends Activity {
 
-    private static final String URL = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
+    private final String url = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
     private CurPOJO currency;
 
     @Override
@@ -33,7 +33,7 @@ public class InitScreen extends Activity {
         @Override
         protected Void doInBackground(Void... voids) {
             // получаем курс UAH в USD с помощью нашего парсера
-            JSONArray jsonUAHToUSD = JSONParser.getJSONFromUrl(URL);
+            JSONArray jsonUAHToUSD = JSONParser.getJSONFromUrl(url);
             if (jsonUAHToUSD != null) {
                 try {
                     JSONObject jobj = jsonUAHToUSD.getJSONObject(2);
